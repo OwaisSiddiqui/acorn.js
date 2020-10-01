@@ -1,0 +1,25 @@
+{
+  "name": "acorn-sws",
+  "version": "1.0.0",
+  "description": "API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OwaisSiddiqui/Acorn-API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OwaisSiddiqui/Acorn-API/issues"
+  },
+  "homepage": "https://github.com/OwaisSiddiqui/Acorn-API#readme",
+  "dependencies": {
+    "jsdom": "^16.4.0",
+    "node-fetch": "^2.6.1",
+    "tough-cookie": "^4.0.0"
+  }
+}
