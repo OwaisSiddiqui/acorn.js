@@ -1,5 +1,6 @@
 # myacorn
 [Unoffical] API for Acorn SWS [Student Web Services] (https://acorn.utoronto.ca/sws), University of Toronto's student information service. The API is available only as a `node_module` in Node.js.
+[![Build Status](https://travis-ci.com/OwaisSiddiqui/myacorn.svg?token=VqefhyYp86hqytWSoaLy&branch=master)](https://travis-ci.com/OwaisSiddiqui/myacorn)
 ## Installation
 ```
 npm install myacorn
