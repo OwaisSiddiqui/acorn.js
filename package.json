@@ -4,7 +4,7 @@
   "description": "API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service",
   "main": "acorn.js",
   "scripts": {
-    "test": "mocha"
+    "test": "npm run test"
   },
   "repository": {
     "type": "git",
