@@ -1,1 +1,1 @@
-asserts.equal(true, true)
+return true
