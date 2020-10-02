@@ -12,7 +12,7 @@ var acorn = new acornsws("<UTORID>", "<UTORID_PASSWORD>")
 acorn.login()
     .then(result => {
         // result is the Acorn object
-        return result.getStudentBasicInfo()
+        return result.studentBasicInfo()
     })
     .then(data => {
         // data is the JSON object with the information
