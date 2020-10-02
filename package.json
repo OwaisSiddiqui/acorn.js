@@ -2,7 +2,7 @@
   "name": "acorn-sws",
   "version": "1.0.0",
   "description": "API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service",
-  "main": "index.js",
+  "main": "acorn.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

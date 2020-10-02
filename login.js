@@ -5,6 +5,8 @@ const handleRedirect = require('./handleRedirect')
 const { JSDOM } = jsdom
 
 module.exports = login = async (cookieJar, utorid, utoridPassword) => {
+    // First go to the direct Acorn link to capture any cookies on redirect
+    // "redirect": "manual" will stop and return the response object of the redirect link
     return await fetch("https://acorn.utoronto.ca/sws", {
         "redirect": "manual"
     })
