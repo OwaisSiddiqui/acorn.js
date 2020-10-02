@@ -3,8 +3,7 @@ orbs:
   node: circleci/node@3.0.0
 workflows:
   node-tests:
-    jobs:
-      steps:
+    steps:
       - checkout
       - run: npm install
       - run: mkdir ~/junit
@@ -16,4 +15,4 @@ workflows:
       - store_test_results:
           path: ~/junit
       - store_artifacts:
-          path: ~/junit 
+          path: ~/junit
