@@ -9,8 +9,8 @@ npm install myacorn
 ## Usage
 Require the `node_module`. Create a `Acorn` class with UTORid and UTORid password as the first two arguements respectively. `acorn.login()` returns a `Promise`. When it's `resolved` it returns the `acorn` object you used to `login`. You can then use the methods on the `acorn` object e.g. getting basic student info.
 ```javascript
-const acornsws = require('myacorn')
-var acorn = new acornsws("<UTORID>", "<UTORID_PASSWORD>")
+const myacorn = require('myacorn')
+var acorn = new myacorn("<UTORID>", "<UTORID_PASSWORD>")
 acorn.login()
     .then(result => {
         // result is the Acorn object
