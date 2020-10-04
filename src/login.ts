@@ -42,14 +42,15 @@ const login = async (cookieJar: tough.CookieJar, utorid: string, utoridPassword:
         const dom = new JSDOM(data)
         if (dom.window.document.getElementsByClassName("form-element form-error")) {
             Array.from(dom.window.document.getElementsByClassName("form-element form-error")).forEach((element: any) => {
-                if (element.innerHTML === "The password you entered was incorrect.") {
+                if (element.innerHTML === "The username you entered cannot be identified.") {
+                    throw new Error("The username you entered cannot be identified.")
+                }
+                else if (element.innerHTML === "The password you entered was incorrect.") {
                     throw new Error("The password you entered for the given UTORid was incorrect.")
                 }
             })
-        } else {
-            throw new Error("Cookies were likely not handled properly.")
         }
-        var SAMLResponse = dom.window.document.querySelector("input[name=SAMLResponse]").value  
+        var SAMLResponse = dom.window.document.querySelector("input[name=SAMLResponse]").value
         return fetch("https://acorn.utoronto.ca/spACS", {
             method: "POST",
             headers: new Headers({

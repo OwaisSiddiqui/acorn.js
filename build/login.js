@@ -98,13 +98,13 @@ var login = function (cookieJar, utorid, utoridPassword) { return __awaiter(void
                     var dom = new JSDOM(data);
                     if (dom.window.document.getElementsByClassName("form-element form-error")) {
                         Array.from(dom.window.document.getElementsByClassName("form-element form-error")).forEach(function (element) {
-                            if (element.innerHTML === "The password you entered was incorrect.") {
+                            if (element.innerHTML === "The username you entered cannot be identified.") {
+                                throw new Error("The username you entered cannot be identified.");
+                            }
+                            else if (element.innerHTML === "The password you entered was incorrect.") {
                                 throw new Error("The password you entered for the given UTORid was incorrect.");
                             }
                         });
-                    }
-                    else {
-                        throw new Error("Cookies were likely not handled properly.");
                     }
                     var SAMLResponse = dom.window.document.querySelector("input[name=SAMLResponse]").value;
                     return node_fetch_1.default("https://acorn.utoronto.ca/spACS", {
