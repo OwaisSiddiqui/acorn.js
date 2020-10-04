@@ -14,5 +14,5 @@
       "resolveJsonModule": true,
       "skipLibCheck": true // Need this to avoid node modules who don't implement TS
     },
-    "exclude": ["src/test", "build"] // Don't need TS to compile test files or the build files it creates
+    "exclude": ["test", "build"] // Don't need TS to compile test files or the build files it creates
 }
