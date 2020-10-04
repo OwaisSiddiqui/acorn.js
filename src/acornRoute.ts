@@ -4,13 +4,12 @@ import handleRedirect from './handleRedirect'
 
 var responseText = {}
 
-const acornRoute = async (acornRouteURL: string, httpMethod: string, bodyData: JSON, routeName: string, cookieJar: tough.CookieJar) => {
+const acornRoute = async (acornRouteURL: string, httpMethod: string, routeName: string, cookieJar: tough.CookieJar) => {
     return await fetch(acornRouteURL, {
         method: httpMethod,
         headers: new Headers({
             cookie: cookieJar.getCookieStringSync(acornRouteURL)
-        }),
-        body: JSON.stringify(bodyData)
+        })
     })
     .then(response => handleRedirect(response, cookieJar))
     .then((response: any) => response.json())

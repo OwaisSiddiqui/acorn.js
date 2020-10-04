@@ -75,7 +75,7 @@ module.exports = /** @class */ (function () {
         this.getStudentBasicInfo = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/profile/studentBasicInfo", "GET", JSON, "studentBasicInfo", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/profile/studentBasicInfo", "GET", "studentBasicInfo", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -83,7 +83,7 @@ module.exports = /** @class */ (function () {
         this.getMailingAddress = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/tc/mailingAddress", "GET", JSON, "mailingAddress", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/tc/mailingAddress", "GET", "mailingAddress", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -91,7 +91,7 @@ module.exports = /** @class */ (function () {
         this.getTodayStartDateForARTSC = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/is-today-peak-load", "GET", JSON, "todayStartDateForARTSC", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/is-today-peak-load", "GET", "todayStartDateForARTSC", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -99,7 +99,7 @@ module.exports = /** @class */ (function () {
         this.getStudentAwards = function (sessionCode) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/invoice?sessionCode=" + sessionCode, "GET", JSON, "studentAwards", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/invoice?sessionCode=" + sessionCode, "GET", "studentAwards", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -108,7 +108,7 @@ module.exports = /** @class */ (function () {
         this.getStudentAttendanceInfo = function (sessionCode) { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/awards/attendance?sessionCode=" + sessionCode, "GET", JSON, "studentAttendanceInfo", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/awards/attendance?sessionCode=" + sessionCode, "GET", "studentAttendanceInfo", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -116,7 +116,7 @@ module.exports = /** @class */ (function () {
         this.getCOEParticipatingOrgs = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/coe-participating-orgs", "GET", JSON, "COEParticipatingOrgs", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/coe-participating-orgs", "GET", "COEParticipatingOrgs", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -124,7 +124,7 @@ module.exports = /** @class */ (function () {
         this.getGlobalMessage = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/global-message", "GET", JSON, "globalMessage", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/global-message", "GET", "globalMessage", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -132,7 +132,7 @@ module.exports = /** @class */ (function () {
         this.getFeatureConfigs = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/feature-configs", "GET", JSON, "featureConfigs", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/acorn-config/feature-configs", "GET", "featureConfigs", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -140,7 +140,7 @@ module.exports = /** @class */ (function () {
         this.getEmailAddress = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/profile/email", "GET", JSON, "emailAddress", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/profile/email", "GET", "emailAddress", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -148,7 +148,7 @@ module.exports = /** @class */ (function () {
         this.getDomesticStudent = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/profile/domesticStudent", "GET", JSON, "domesticStudent", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/profile/domesticStudent", "GET", "domesticStudent", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -156,7 +156,7 @@ module.exports = /** @class */ (function () {
         this.getAccountBalanceFromMainframe = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/finance/mainframe-accountBalance", "GET", JSON, "accountBalanceFromMainframe", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/finance/mainframe-accountBalance", "GET", "accountBalanceFromMainframe", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -164,7 +164,7 @@ module.exports = /** @class */ (function () {
         this.getStudentEnrolledCourses = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/courseRegistration/enrolledCourses", "GET", JSON, "studentEnrolledCourses", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/courseRegistration/enrolledCourses", "GET", "studentEnrolledCourses", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -172,7 +172,7 @@ module.exports = /** @class */ (function () {
         this.getTodaysEvents = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/eventCalendar/getDashboardEvents/TODAY", "GET", JSON, "todaysEvents", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/eventCalendar/getDashboardEvents/TODAY", "GET", "todaysEvents", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -180,7 +180,7 @@ module.exports = /** @class */ (function () {
         this.getUpcomingEvents = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/eventCalendar/getUpcomingEvents", "GET", JSON, "upcomingEvents", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/eventCalendar/getUpcomingEvents", "GET", "upcomingEvents", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -188,7 +188,7 @@ module.exports = /** @class */ (function () {
         this.getStartTimes = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/course/start-times", "GET", JSON, "startTimes", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/course/start-times", "GET", "startTimes", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -196,7 +196,7 @@ module.exports = /** @class */ (function () {
         this.getDeData = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/programProgress", "GET", JSON, "deData", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/programProgress", "GET", "deData", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -204,7 +204,7 @@ module.exports = /** @class */ (function () {
         this.getCurrentDate = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/eventCalendar/getCurrentDate/yyyy-MM-dd", "GET", JSON, "currentDate", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/eventCalendar/getCurrentDate/yyyy-MM-dd", "GET", "currentDate", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -212,7 +212,7 @@ module.exports = /** @class */ (function () {
         this.getCurrentRegistrations = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/current-registrations", "GET", JSON, "currentRegistrations", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/current-registrations", "GET", "currentRegistrations", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -220,7 +220,7 @@ module.exports = /** @class */ (function () {
         this.getPostsWithInviteStatus = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/posts-with-invite-status", "GET", JSON, "postsWithInviteStatus", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/posts-with-invite-status", "GET", "postsWithInviteStatus", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -228,7 +228,7 @@ module.exports = /** @class */ (function () {
         this.getCNCTotal = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/cnc/total-credits", "GET", JSON, "CNCTotal", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/cnc/total-credits", "GET", "CNCTotal", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -244,7 +244,7 @@ module.exports = /** @class */ (function () {
                         for (; i < len; i++) {
                             qparams = qparams + ("&sessionCodes=" + encodeURIComponent(sessionCodes[i]));
                         }
-                        return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/term-course-loads?" + qparams, "GET", JSON, "termCourseLoad", this.cookieJar)];
+                        return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/term-course-loads?" + qparams, "GET", "termCourseLoad", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -252,7 +252,7 @@ module.exports = /** @class */ (function () {
         this.getActiveActionNotices = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/notification/action-notice", "GET", JSON, "activeActionNotices", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/notification/action-notice", "GET", "activeActionNotices", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -260,7 +260,7 @@ module.exports = /** @class */ (function () {
         this.getDentalOptOutSessionCode = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/finance/dentalOptOutSessionCode", "GET", JSON, "dentalOptOutSessionCode", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/dashboard/finance/dentalOptOutSessionCode", "GET", "dentalOptOutSessionCode", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });
@@ -268,7 +268,7 @@ module.exports = /** @class */ (function () {
         this.getEligibleRegistrations = function () { return __awaiter(_this, void 0, void 0, function () {
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/eligible-registrations", "GET", JSON, "eligibleRegistrations", this.cookieJar)];
+                    case 0: return [4 /*yield*/, acornRoute_1.default("https://acorn.utoronto.ca/sws/rest/enrolment/eligible-registrations", "GET", "eligibleRegistrations", this.cookieJar)];
                     case 1: return [2 /*return*/, _a.sent()];
                 }
             });

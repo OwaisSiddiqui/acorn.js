@@ -61,15 +61,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var node_fetch_1 = __importStar(require("node-fetch"));
 var handleRedirect_1 = __importDefault(require("./handleRedirect"));
 var responseText = {};
-var acornRoute = function (acornRouteURL, httpMethod, bodyData, routeName, cookieJar) { return __awaiter(void 0, void 0, void 0, function () {
+var acornRoute = function (acornRouteURL, httpMethod, routeName, cookieJar) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0: return [4 /*yield*/, node_fetch_1.default(acornRouteURL, {
                     method: httpMethod,
                     headers: new node_fetch_1.Headers({
                         cookie: cookieJar.getCookieStringSync(acornRouteURL)
-                    }),
-                    body: JSON.stringify(bodyData)
+                    })
                 })
                     .then(function (response) { return handleRedirect_1.default(response, cookieJar); })
                     .then(function (response) { return response.json(); })
