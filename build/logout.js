@@ -35,19 +35,23 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var fetch = require('node-fetch');
-var handleRedirect = require('./handleRedirect');
-module.exports = logout = function (isLoggedIn, cookieJar) { return __awaiter(void 0, void 0, void 0, function () {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var node_fetch_1 = __importDefault(require("node-fetch"));
+var handleRedirect_1 = __importDefault(require("./handleRedirect"));
+var logout = function (isLoggedIn, cookieJar) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
                 if (!isLoggedIn) return [3 /*break*/, 2];
-                return [4 /*yield*/, fetch("https://acorn.utoronto.ca/sws/auth/logout", {
+                return [4 /*yield*/, node_fetch_1.default("https://acorn.utoronto.ca/sws/auth/logout", {
                         headers: {
                             cookie: cookieJar.getCookieStringSync("https://acorn.utoronto.ca/sws/auth/logout")
                         }
                     })
-                        .then(function (response) { return handleRedirect(response, cookieJar); })
+                        .then(function (response) { return handleRedirect_1.default(response, cookieJar); })
                         .then(function (response) {
                         cookieJar.removeAllCookiesSync();
                         return false;
@@ -60,3 +64,4 @@ module.exports = logout = function (isLoggedIn, cookieJar) { return __awaiter(vo
         }
     });
 }); };
+exports.default = logout;

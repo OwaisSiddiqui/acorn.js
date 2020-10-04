@@ -1,4 +1,23 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,26 +54,34 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var jsdom = require("jsdom");
-var fetch = require('node-fetch');
-var handleRedirect = require('./handleRedirect');
-var JSDOM = jsdom.JSDOM;
-module.exports = login = function (cookieJar, utorid, utoridPassword) { return __awaiter(void 0, void 0, void 0, function () {
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var jsdom_1 = __importDefault(require("jsdom"));
+var node_fetch_1 = __importStar(require("node-fetch"));
+var handleRedirect_1 = __importDefault(require("./handleRedirect"));
+var url_1 = require("url");
+var JSDOM = jsdom_1.default.JSDOM;
+var redirectResponse = null;
+var login = function (cookieJar, utorid, utoridPassword) { return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
         switch (_a.label) {
-            case 0: return [4 /*yield*/, fetch("https://acorn.utoronto.ca/sws", {
+            case 0: return [4 /*yield*/, node_fetch_1.default("https://acorn.utoronto.ca/sws", {
                     "redirect": "manual"
                 })
-                    .then(function (response) { return handleRedirect(response, cookieJar); })
-                    .then(function (response) { return Promise.allSettled([response, cookieJar.getCookieString(response.url)]); })
-                    .then(function (results) {
-                    var cookieString = results[1].value;
-                    return fetch("https://idpz.utorauth.utoronto.ca/idp/profile/SAML2/Redirect/SSO?execution=e1s1", {
+                    .then(function (response) {
+                    redirectResponse = response;
+                    return handleRedirect_1.default(response, cookieJar);
+                })
+                    .then(function (response) { return cookieJar.getCookieString(response.url); })
+                    .then(function (cookieString) {
+                    return node_fetch_1.default("https://idpz.utorauth.utoronto.ca/idp/profile/SAML2/Redirect/SSO?execution=e1s1", {
                         method: "POST",
-                        headers: {
+                        headers: new node_fetch_1.Headers({
                             cookie: cookieString
-                        },
-                        body: new URLSearchParams({
+                        }),
+                        body: new url_1.URLSearchParams({
                             "$csrfToken.getParameterName()": "$csrfToken.getToken()",
                             "j_username": utorid,
                             "j_password": utoridPassword,
@@ -63,11 +90,11 @@ module.exports = login = function (cookieJar, utorid, utoridPassword) { return _
                         "redirect": "manual"
                     });
                 })
-                    .then(function (response) { return handleRedirect(response, cookieJar); })
+                    .then(function (response) { return handleRedirect_1.default(response, cookieJar); })
                     .then(function (response) { return Promise.allSettled([response.text(), cookieJar.getCookieString("https://acorn.utoronto.ca/spACS")]); })
                     .then(function (results) {
-                    var data = results[0].value;
-                    var cookieString = results[1].value;
+                    var data = results[0].status === "fulfilled" ? results[0].value : "";
+                    var cookieString = results[1].status === "fulfilled" ? results[1].value : "";
                     var dom = new JSDOM(data);
                     if (dom.window.document.getElementsByClassName("form-element form-error")) {
                         Array.from(dom.window.document.getElementsByClassName("form-element form-error")).forEach(function (element) {
@@ -76,19 +103,22 @@ module.exports = login = function (cookieJar, utorid, utoridPassword) { return _
                             }
                         });
                     }
+                    else {
+                        throw new Error("Cookies were likely not handled properly.");
+                    }
                     var SAMLResponse = dom.window.document.querySelector("input[name=SAMLResponse]").value;
-                    return fetch("https://acorn.utoronto.ca/spACS", {
+                    return node_fetch_1.default("https://acorn.utoronto.ca/spACS", {
                         method: "POST",
-                        headers: {
+                        headers: new node_fetch_1.Headers({
                             cookie: cookieString
-                        },
-                        body: new URLSearchParams({
+                        }),
+                        body: new url_1.URLSearchParams({
                             "SAMLResponse": SAMLResponse
                         }),
                         "redirect": "manual"
                     });
                 })
-                    .then(function (response) { return handleRedirect(response, cookieJar); })
+                    .then(function (response) { return handleRedirect_1.default(response, cookieJar); })
                     .then(function (response) { return response.text(); })
                     .then(function (data) {
                     var dom = new JSDOM(data);
@@ -109,3 +139,4 @@ module.exports = login = function (cookieJar, utorid, utoridPassword) { return _
         }
     });
 }); };
+exports.default = login;

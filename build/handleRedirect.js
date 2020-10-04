@@ -18,7 +18,7 @@ var handleRedirect = function (response, cookieJar) {
         }
         var location = headers['location'] && headers['location'][0];
         if (location) {
-            var cookieString = null;
+            var cookieString = "";
             cookieJar.getCookieString(location, function (error, cookies) {
                 if (error)
                     throw new Error("Failed to getCookieString.");
@@ -36,7 +36,7 @@ var handleRedirect = function (response, cookieJar) {
                 .catch(function (error) { return reject(error); });
         }
         else {
-            return resolve(response);
+            resolve(response);
         }
     })
         .then(function (response) {
@@ -44,3 +44,4 @@ var handleRedirect = function (response, cookieJar) {
     })
         .catch(function (error) { return console.log("Redirect Promise Error: " + error); });
 };
+exports.default = handleRedirect;
