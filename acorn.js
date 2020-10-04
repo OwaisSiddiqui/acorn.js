@@ -28,7 +28,7 @@ module.exports = class Acorn {
     }
     
     mailingAddress = async () => {
-        return await acornRoute("https://acorn.utoronto.ca/sws/rest/tc/mailingAddress", "GET", {}, "mailingAddress", cookieJar)
+        return await acornRoute("https://acorn.utoronto.ca/sws/rest/tc/mailingAddress", "GET", {}, "mailingAddress", this.cookieJar)
     }
     
     todayStartDateForARTSC = async () => {
@@ -62,10 +62,6 @@ module.exports = class Acorn {
     
     domesticStudent = async () => {
         return await acornRoute("https://acorn.utoronto.ca/sws/rest/profile/domesticStudent", "GET", {}, "domesticStudent", this.cookieJar)
-    }
-    
-    studentAccountBalance = async () => {
-        return await acornRoute("https://acorn.utoronto.ca/sws/rest/profile/ ", "GET", {}, "studentAccountBalance", cookieJar)
     }
     
     accountBalanceFromMainframe = async () => {
@@ -107,15 +103,16 @@ module.exports = class Acorn {
     CNCTotal = async () => {
         return await acornRoute("https://acorn.utoronto.ca/sws/rest/enrolment/cnc/total-credits", "GET", {}, "CNCTotal", this.cookieJar)
     }
-    
-    termCourseLoad = async () => {
-        return await acornRoute("https://acorn.utoronto.ca/sws/rest/enrolment/term-course-loads", "GET", {}, "termCourseLoad", this.cookieJar)
+
+    termCourseLoad = async (primaryOrgCode, postCode, sessionCodes) => {
+        var qparams = "primaryOrgCode=" + encodeURIComponent(primaryOrgCode) + "&postCode=" + encodeURIComponent(postCode)
+        var len = sessionCodes.length
+        for (; i < len; i++) {
+            qparams = qparams + ("&sessionCodes=" + encodeURIComponent(sessionCodes[i]));
+        }
+        return await acornRoute("https://acorn.utoronto.ca/sws/rest/enrolment/term-course-loads?"+qparams, "GET", {}, "termCourseLoad", this.cookieJar)
     }
-    
-    heartbeatStatus = async () => {
-        return await acornRoute("https://acorn.utoronto.ca/sws/rest/admin/heartbeat", "GET", {}, "startTimes", this.cookieJar)
-    }
-    
+
     activeActionNotices = async () => {
         return await acornRoute("https://acorn.utoronto.ca/sws/rest/notification/action-notice", "GET", {}, "activeActionNotices", this.cookieJar)
     }
@@ -125,6 +122,6 @@ module.exports = class Acorn {
     }
     
     eligibleRegistrations = async () => {
-        return await acornRoute("https://acorn.utoronto.ca/sws/rest/eligible-registrations", "GET", {}, "eligibleRegistrations", this.cookieJar)
+        return await acornRoute("https://acorn.utoronto.ca/sws/rest/enrolment/eligible-registrations", "GET", {}, "eligibleRegistrations", this.cookieJar)
     }
 }
