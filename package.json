@@ -1,5 +1,5 @@
 {
-  "name": "myacorn",
+  "name": "acorn.js",
   "version": "1.0.0",
   "description": "API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service",
   "main": "build/acorn.js",

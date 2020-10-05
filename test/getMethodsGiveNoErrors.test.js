@@ -21,9 +21,9 @@
 */
 
 require('dotenv').config({path: './test/.env'})
-const myacorn = require('../build/acorn')
+const acornjs = require('../build/acorn')
 
-var acorn = new myacorn(process.env.UTORID, process.env.UTORID_PASSWORD)
+var acorn = new acornjs(process.env.UTORID, process.env.UTORID_PASSWORD)
 
 acorn.login()
     .then(result => {
