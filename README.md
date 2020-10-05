@@ -1,16 +1,16 @@
-# myacorn
+# acorn.js
 [Unoffical] API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service.
 ## Installation
 The API is available only as a `node_module` within Node.js. Use the command below to install the `node_module` using `npm`:
 ```
-npm install myacorn
+npm install acorn.js
 ```
 ## Usage
-Require the `myacorn` `node_module`. Create an `Acorn` class with a UTORid and its UTORid password by inputting them into the first two arguements of the `myacorn` object respectively. Never directly put your credentials in plain-text. Use a `.env` file as in the example below. Now, you are able to use `acorn.login()` on the `Acorn` object to login to the UTORid account. The `login` method returns a `Promise`. When the Promise is resolved, it returns the same `Acorn` object you used to `login`. You can then use the methods on the `Acorn` object e.g. getting basic student info by using `Acorn.getStudentBasicInfo`.
+Require the `acorn.js` `node_module`. Create an `Acorn` class with a UTORid and its UTORid password by inputting them into the first two arguments of the `acorn.js` object respectively. Never directly put your credentials in plain-text. Use a `.env` file as in the example below. Now, you are able to use `acorn.login()` on the `Acorn` object to login to the UTORid account. The `login` method returns a `Promise`. When the Promise is resolved, it returns the same `Acorn` object you used to `login`. You can then use the methods on the `Acorn` object e.g. getting basic student info by using `Acorn.getStudentBasicInfo`.
 ```javascript
 require('dotenv').config()
-const myacorn = require('myacorn')
-var acorn = new myacorn(process.env.UTORID, process.env.UTORID_PASSWORD)
+const acornjs = require('acorn.js')
+var acorn = new acornjs(process.env.UTORID, process.env.UTORID_PASSWORD)
 acorn.login()
     .then(result => {
         // result is the Acorn object
@@ -31,4 +31,4 @@ acorn.login()
 ## Contributions
 Submit an issue and open a pull request.
 ## Documentation
-Full documentation https://myacorn.vercel.app/#/
+Full documentation https://acornjs.vercel.app/#/
