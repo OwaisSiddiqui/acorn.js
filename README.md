@@ -24,11 +24,3 @@ acorn.login()
         console.log(error)
     })
 ```
-## Warning
-1. Never input your UTORid credentials to the directly to the `Acorn` class but save it in a `.env` file and call that (using the `node_module` `dotenv`). Always make sure it is ignored by the `.gitignore` file. If at anytime anyone makes a pull request or share theirs or others UTORid credentials to the public, this repository will be shutdown immediately and I won't look back. I also suggest that person to immediately change their Acorn password (and any other Univeristy of Toronto service which uses similar passwords).
-2. Due to the high risk of accidentally making unwanted changes to your Acorn account, there will be absolutely no implementations of methods which make POST requests to Acorn. Examples of methods are enrolling in courses, accepting a POSt, and so on.
-3. Any unexpected errors or unwanted changes to your Acorn account is your own responsibility. It should only be used for personal/individual use.
-## Contributions
-Submit an issue and open a pull request.
-## Documentation
-Full documentation https://acornjs.vercel.app/#/
