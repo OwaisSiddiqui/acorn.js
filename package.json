@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service",
   "main": "build/acorn.js",
-  "scripts": {
-    "test": "mocha test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/OwaisSiddiqui/Acorn-API.git"
