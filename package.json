@@ -5,15 +5,15 @@
   "main": "build/acorn.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OwaisSiddiqui/Acorn-API.git"
+    "url": "https://github.com/OwaisSiddiqui/acorn.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OwaisSiddiqui/Acorn-API/issues"
+    "url": "https://github.com/OwaisSiddiqui/acorn.js/issues"
   },
-  "homepage": "https://github.com/OwaisSiddiqui/Acorn-API#readme",
+  "homepage": "https://github.com/OwaisSiddiqui/acorn.js",
   "dependencies": {
     "jsdom": "^16.4.0",
     "node-fetch": "^2.6.1",
