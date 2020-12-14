@@ -1,5 +1,5 @@
 # acorn.js
-[Unoffical] API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service.
+An API for Acorn (https://acorn.utoronto.ca/sws, University of Toronto's student information service).
 ## Installation
 The API is available only as a Node.js module. Use the command below to install the `node_module` using `npm`:
 ```
