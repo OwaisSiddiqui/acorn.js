@@ -6,13 +6,13 @@
         "ES2020"
       ],                     
       "allowJs": true,
-      "outDir": "build",                          
+      "outDir": "lib",                          
       "rootDir": "src",
       "strict": true,         
       "noImplicitAny": true,
       "esModuleInterop": true,
       "resolveJsonModule": true,
-      "skipLibCheck": true // Need this to avoid node modules who don't implement TS
+      "skipLibCheck": true
     },
-    "exclude": ["test", "build"] // Don't need TS to compile test files or the build files it creates
+    "exclude": ["lib"]
 }

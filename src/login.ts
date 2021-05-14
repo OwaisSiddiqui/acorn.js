@@ -3,7 +3,6 @@ import fetch, { Headers } from 'node-fetch'
 import handleRedirect from './handleRedirect'
 import tough from 'tough-cookie'
 import { URLSearchParams } from 'url'
-import { Element, LinkedHTMLElement } from 'svg.js'
 
 const { JSDOM } = jsdom
 var redirectResponse = null
