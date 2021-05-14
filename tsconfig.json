@@ -14,5 +14,5 @@
       "resolveJsonModule": true,
       "skipLibCheck": true
     },
-    "exclude": ["lib"]
+    "exclude": ["lib", "test"]
 }
