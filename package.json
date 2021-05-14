@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "API for Acorn (https://acorn.utoronto.ca/sws), University of Toronto's student information service",
   "main": "build/lib.js",
+  "files": ["/lib"],
   "scripts": {
     "build": "tsc"
   },
